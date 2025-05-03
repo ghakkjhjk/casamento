@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Felipe & Carmem - Nosso Casamento</title>
+    <style>
+        body {
+            font-family: 'Playfair Display', serif;
+            margin: 0;
+            padding: 0;
+            background-color: #fff9f9;
+            color: #555;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            text-align: center;
+            padding: 40px 0;
+            background: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), url('https://images.unsplash.com/photo-1530103862676-de8c9debad1d') center/cover;
+            border-bottom: 1px solid #f0c0c0;
+        }
+        
+        h1 {
+            font-size: 3.5rem;
+            color: #d35d6e;
+            margin: 10px 0;
+            font-weight: normal;
+        }
+        
+        h2 {
+            font-size: 2rem;
+            color: #d35d6e;
+            border-bottom: 1px solid #f0c0c0;
+            padding-bottom: 10px;
+            margin-top: 40px;
+        }
+        
+        .subtitle {
+            font-size: 1.5rem;
+            color: #888;
+            font-style: italic;
+        }
+        
+        .polaroid-gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            margin: 40px 0;
+        }
+        
+        .polaroid {
+            background: white;
+            padding: 15px 15px 40px 15px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transform: rotate(-2deg);
+            width: 200px;
+            transition: transform 0.3s;
+        }
+        
+        .polaroid:nth-child(even) {
+            transform: rotate(3deg);
+        }
+        
+        .polaroid:hover {
+            transform: scale(1.05) rotate(0deg);
+        }
+        
+        .polaroid img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border: 1px solid #eee;
+        }
+        
+        .polaroid p {
+            text-align: center;
+            font-style: italic;
+            color: #666;
+            margin-top: 10px;
+        }
+        
+        .about-text {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 40px;
+            font-size: 1.1rem;
+        }
+        
+        .gifts-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+        
+        .gift-item {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        
+        .gift-item:hover {
+            transform: translateY(-5px);
+        }
+        
+        .gift-image {
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        .gift-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        
+        .gift-item:hover .gift-image img {
+            transform: scale(1.05);
+        }
+        
+        .gift-details {
+            padding: 20px;
+        }
+        
+        .gift-title {
+            font-size: 1.3rem;
+            color: #d35d6e;
+            margin: 0 0 10px;
+        }
+        
+        .gift-price {
+            font-weight: bold;
+            font-size: 1.2rem;
+            color: #333;
+            margin: 10px 0;
+        }
+        
+        .gift-description {
+            color: #666;
+            margin-bottom: 20px;
+        }
+        
+        .pix-button {
+            display: block;
+            background: #32bcad;
+            color: white;
+            text-align: center;
+            padding: 12px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+        
+        .pix-button:hover {
+            background: #2aa899;
+        }
+        
+        .whatsapp-button {
+            display: block;
+            background: #25D366;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 40px auto;
+            max-width: 300px;
+            transition: background 0.3s;
+        }
+        
+        .whatsapp-button:hover {
+            background: #128C7E;
+        }
+        
+        .pix-instructions {
+            background: #f0f9f8;
+            border-left: 4px solid #32bcad;
+            padding: 20px;
+            margin: 30px 0;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 30px 0;
+            margin-top: 50px;
+            background-color: #f8e8e8;
+            color: #d35d6e;
+        }
+        
+        .rose-decoration {
+            font-size: 2rem;
+            margin: 20px 0;
+            color: #d35d6e;
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            .gifts-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="rose-decoration">🌹</div>
+            <h1>Felipe & Carmem</h1>
+            <div class="subtitle">Unidos para sempre | 15 de Novembro de 2023</div>
+            <div class="rose-decoration">🌹</div>
+        </div>
+    </header>
+    
+    <div class="container">
+        <section id="about">
+            <h2>Nossa História</h2>
+            <div class="about-text">
+                <p>Felipe e Carmem se conheceram em uma tarde ensolarada no parque da cidade, onde ambos corriam para manter a forma. O que começou com um acidental "esbarrão" e um pedido de desculpas, transformou-se em longas conversas, encontros marcados e, finalmente, em um amor que decidimos celebrar para sempre.</p>
+                <p>Depois de 5 anos de muitas risadas, viagens inesquecíveis e apoio mútuo em todos os momentos, estamos ansiosos para começar essa nova jornada juntos, rodeados por todos que amamos.</p>
+            </div>
+            
+            <div class="polaroid-gallery">
+                <div class="polaroid">
+                    <img src="https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2" alt="Felipe e Carmem no primeiro encontro">
+                    <p>Nosso primeiro encontro</p>
+                </div>
+                <div class="polaroid">
+                    <img src="https://images.unsplash.com/photo-1529333166437-7750a6dd5a70" alt="Viagem à praia">
+                    <p>Viagem à praia</p>
+                </div>
+                <div class="polaroid">
+                    <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2" alt="Noivado">
+                    <p>O pedido</p>
+                </div>
+                <div class="polaroid">
+                    <img src="https://images.unsplash.com/photo-1518621736915-f3b1c41bfd00" alt="Preparativos do casamento">
+                    <p>Preparativos</p>
+                </div>
+            </div>
+        </section>
+        
+        <section id="gifts">
+            <h2>Lista de Presentes</h2>
+            
+            <div class="pix-instructions">
+                <h3>Como presentear:</h3>
+                <ol>
+                    <li>Escolha um dos presentes da lista abaixo</li>
+                    <li>Clique no botão "Presentear via PIX"</li>
+                    <li>Copie a chave PIX: <strong>casamento.felipeecarmem@email.com</strong></li>
+                    <li>Envie o valor correspondente ao presente escolhido</li>
+                    <li>No campo mensagem do PIX, escreva o nome do presente</li>
+                </ol>
+                <p>Agradecemos imensamente por fazer parte do nosso dia especial e por nos ajudar a construir nosso lar!</p>
+            </div>
+            
+            <div class="gifts-container">
+                <div class="gift-item">
+                    <div class="gift-image">
+                        <img src="https://images.unsplash.com/photo-1592078615290-033ee584e267" alt="Jogo de panelas">
+                    </div>
+                    <div class="gift-details">
+                        <h3 class="gift-title">Jogo de Panelas</h3>
+                        <div class="gift-price">R$ 350,00</div>
+                        <p class="gift-description">Jogo de panelas antiaderente com 5 peças, perfeito para nossas primeiras refeições em família.</p>
+                        <a href="#" class="pix-button">Presentear via PIX</a>
+                    </div>
+                </div>
+                
+                <div class="gift-item">
+                    <div class="gift-image">
+                        <img src="https://images.unsplash.com/photo-1556228453-efd6c1ff04f6" alt="Conjunto de toalhas">
+                    </div>
+                    <div class="gift-details">
+                        <h3 class="gift-title">Conjunto de Toalhas</h3>
+                        <div class="gift-price">R$ 220,00</div>
+                        <p class="gift-description">Conjunto de toalhas de banho fofas e absorventes, tamanho família.</p>
+                        <a href="#" class="pix-button">Presentear via PIX</a>
+                    </div>
+                </div>
+                
+                <div class="gift-item">
+                    <div class="gift-image">
+                        <img src="https://images.unsplash.com/photo-1567538096630-e0c55bd6374c" alt="Jogo de jantar">
+                    </div>
+                    <div class="gift-details">
+                        <h3 class="gift-title">Jogo de Jantar</h3>
+                        <div class="gift-price">R$ 480,00</div>
+                        <p class="gift-description">Jogo de jantar completo para 6 pessoas, em porcelana resistente.</p>
+                        <a href="#" class="pix-button">Presentear via PIX</a>
+                    </div>
+                </div>
+                
+                <div class="gift-item">
+                    <div class="gift-image">
+                        <img src="https://images.unsplash.com/photo-1517705008128-361805f42e86" alt="Cafeteira elétrica">
+                    </div>
+                    <div class="gift-details">
+                        <h3 class="gift-title">Cafeteira Elétrica</h3>
+                        <div class="gift-price">R$ 280,00</div>
+                        <p class="gift-description">Cafeteira programável para começar nossos dias com o pé direito.</p>
+                        <a href="#" class="pix-button">Presentear via PIX</a>
+                    </div>
+                </div>
+                
+                <div class="gift-item">
+                    <div class="gift-image">
+                        <img src="https://images.unsplash.com/photo-1583394838336-acd977736f90" alt="Aspirador de pó">
+                    </div>
+                    <div class="gift-details">
+                        <h3 class="gift-title">Aspirador de Pó</h3>
+                        <div class="gift-price">R$ 420,00</div>
+                        <p class="gift-description">Aspirador de pó sem fio, potente e prático para manter nosso lar limpo.</p>
+                        <a href="#" class="pix-button">Presentear via PIX</a>
+                    </div>
+                </div>
+                
+                <div class="gift-item">
+                    <div class="gift-image">
+                        <img src="https://images.unsplash.com/photo-1595526117669-4bf610a8ab65" alt="Vale-experiência">
+                    </div>
+                    <div class="gift-details">
+                        <h3 class="gift-title">Vale-Experiência</h3>
+                        <div class="gift-price">R$ 300,00</div>
+                        <p class="gift-description">Ajude-nos a criar memórias com um jantar romântico em um restaurante especial.</p>
+                        <a href="#" class="pix-button">Presentear via PIX</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <a href="https://wa.me/5511999999999?text=Olá%20Felipe%20e%20Carmem!" class="whatsapp-button">
+            <i class="fab fa-whatsapp"></i> Falar com os noivos
+        </a>
+    </div>
+    
+    <footer>
+        <div class="container">
+            <p>Obrigado por fazer parte do nosso dia especial!</p>
+            <p>Felipe & Carmem</p>
+            <div class="rose-decoration">🌹</div>
+        </div>
+    </footer>
+</body>
+</html>
